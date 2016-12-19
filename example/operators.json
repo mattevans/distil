@@ -1,0 +1,128 @@
+[
+   {
+      "id":1,
+      "code":"eq",
+      "label":"is",
+      "type":"string"
+   },
+   {
+      "id":2,
+      "code":"not_eq",
+      "label":"is not",
+      "type":"string"
+   },
+   {
+      "id":3,
+      "code":"matches",
+      "label":"contains",
+      "type":"string"
+   },
+   {
+      "id":4,
+      "code":"does_not_match",
+      "label":"does not contain",
+      "type":"string"
+   },
+   {
+      "id":5,
+      "code":"is_null",
+      "label":"not present",
+      "type":"string"
+   },
+   {
+      "id":6,
+      "code":"not_null",
+      "label":"is present",
+      "type":"string"
+   },
+   {
+      "id":7,
+      "code":"eq",
+      "label":"equal to",
+      "type":"number"
+   },
+   {
+      "id":8,
+      "code":"not_eq",
+      "label":"not equal to",
+      "type":"number"
+   },
+   {
+      "id":9,
+      "code":"lt",
+      "label":"less than",
+      "type":"number"
+   },
+   {
+      "id":10,
+      "code":"gt",
+      "label":"greater than",
+      "type":"number"
+   },
+   {
+      "id":11,
+      "code":"lteq",
+      "label":"equal to or less than",
+      "type":"number"
+   },
+   {
+      "id":12,
+      "code":"gteq",
+      "label":"equal to or more than",
+      "type":"number"
+   },
+   {
+      "id":13,
+      "code":"is_null",
+      "label":"not present",
+      "type":"number"
+   },
+   {
+      "id":14,
+      "code":"not_null",
+      "label":"is present",
+      "type":"number"
+   },
+   {
+      "id":15,
+      "code":"eq",
+      "label":"on",
+      "type":"datetime"
+   },
+   {
+      "id":16,
+      "code":"gt",
+      "label":"after",
+      "type":"datetime"
+   },
+   {
+      "id":17,
+      "code":"lt",
+      "label":"before",
+      "type":"datetime"
+   },
+   {
+      "id":17,
+      "code":"gteq",
+      "label":"on or after",
+      "type":"datetime"
+   },
+   {
+      "id":18,
+      "code":"lteq",
+      "label":"on or before",
+      "type":"datetime"
+   },
+   {
+      "id":19,
+      "code":"contains",
+      "label":"has at least one of the following",
+      "type":"array"
+   },
+   {
+      "id":20,
+      "code":"does_not_contain",
+      "label":"has none of the following",
+      "type":"array"
+   }
+]
