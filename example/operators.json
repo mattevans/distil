@@ -115,12 +115,24 @@
    },
    {
       "id":19,
+      "code":"is_null",
+      "label":"not present",
+      "type":"datetime"
+   },
+   {
+      "id":20,
+      "code":"not_null",
+      "label":"is present",
+      "type":"datetime"
+   },
+   {
+      "id":21,
       "code":"contains",
       "label":"has at least one of the following",
       "type":"array"
    },
    {
-      "id":20,
+      "id":22,
       "code":"does_not_contain",
       "label":"has none of the following",
       "type":"array"
