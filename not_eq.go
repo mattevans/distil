@@ -21,7 +21,7 @@ func (a *notEq) Filter(row map[string]interface{}, filter *Filter) error {
 	// action.
 	switch filter.Operator.Type {
 	case operatorTypeString:
-		// Ensure values are checked as case-insenstive.
+		// Ensure values are checked as case-insensitive.
 		s, substr := strings.ToUpper(row[filter.Field].(string)), strings.ToUpper(filter.Value.(string))
 
 		// Check equality.
