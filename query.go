@@ -47,6 +47,10 @@ func (f *Filter) distiller() (distiller, error) {
 		return &contains{}, nil
 	case "does_not_contain":
 		return &notContains{}, nil
+	case "is_true":
+		return &isTrue{}, nil
+	case "is_false":
+		return &isFalse{}, nil
 	default:
 		return nil, fmt.Errorf("Unknown operator ID: %v", f.Operator)
 	}

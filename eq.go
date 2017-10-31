@@ -25,7 +25,7 @@ func (a *eq) Filter(row map[string]interface{}, filter *Filter) error {
 	// Handle equality check for the different operator types.
 	switch filter.Operator.Type {
 	case operatorTypeString:
-		// Ensure values are checked as case-insensitive.
+		// Ensure values are checked as case-insenstive.
 		s, substr := strings.ToUpper(row[filter.Field].(string)), strings.ToUpper(filter.Value.(string))
 
 		// Check equality.
@@ -60,6 +60,20 @@ func (a *eq) Filter(row map[string]interface{}, filter *Filter) error {
 		}
 		// Check equality.
 		if (*baseline).Equals(*datum) {
+			a.rows = append(a.rows, row)
+		}
+	case operatorTypeBoolean:
+		// Cast to boolean.
+		datum, err := castToBoolean(filter.Value)
+		if err != nil {
+			return err
+		}
+		baseline, err := castToBoolean(row[filter.Field])
+		if err != nil {
+			return err
+		}
+		// Check equality.
+		if datum == baseline {
 			a.rows = append(a.rows, row)
 		}
 	default:

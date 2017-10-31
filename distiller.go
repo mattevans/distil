@@ -15,6 +15,7 @@ const (
 	operatorTypeNumber  = "number"
 	operatorTypeDateime = "datetime"
 	operatorTypeArray   = "array"
+	operatorTypeBoolean = "boolean"
 )
 
 // Define methods distiller should implement.
@@ -51,6 +52,12 @@ func validateDataType(filter *Filter) error {
 		if err != nil {
 
 			return fmt.Errorf("Invalid datatype. Expected array datatype, got %T for `%v` %v", datum, filter.Field, err)
+		}
+	case operatorTypeBoolean:
+		_, err := castToBoolean(datum)
+		if err != nil {
+
+			return fmt.Errorf("Invalid datatype. Expected boolean datatype, got %T for `%v` %v", datum, filter.Field, err)
 		}
 	default:
 		return fmt.Errorf("Unknown field type: %s", filter.Operator.Type)
@@ -134,4 +141,13 @@ func castToSlice(datum interface{}) ([]*string, error) {
 		return nil, fmt.Errorf("Invalid datatype. Expected array datatype, got %T", datum)
 	}
 	return results, err
+}
+
+// castToBoolean attempts to cast given interface{} to a boolean.
+func castToBoolean(datum interface{}) (*bool, error) {
+	val, ok := datum.(bool)
+	if !ok {
+		return nil, fmt.Errorf("Invalid datatype. Expected boolean datatype, got %T", datum)
+	}
+	return &val, nil
 }
