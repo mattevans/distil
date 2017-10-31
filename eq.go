@@ -62,6 +62,20 @@ func (a *eq) Filter(row map[string]interface{}, filter *Filter) error {
 		if (*baseline).Equals(*datum) {
 			a.rows = append(a.rows, row)
 		}
+	case operatorTypeBoolean:
+		// Cast to boolean.
+		datum, err := castToBoolean(filter.Value)
+		if err != nil {
+			return err
+		}
+		baseline, err := castToBoolean(row[filter.Field])
+		if err != nil {
+			return err
+		}
+		// Check equality.
+		if datum == baseline {
+			a.rows = append(a.rows, row)
+		}
 	default:
 		return fmt.Errorf("Invalid datatype. Expected string/number/datetime when applying %v operator, got %T for `%v`", filter.Operator.Type, filter.Value, filter.Field)
 	}
