@@ -32,7 +32,7 @@ func (a *contains) Filter(row map[string]interface{}, filter *Filter) error {
 	for _, v := range filter.Value.([]interface{}) {
 		switch value := v.(type) {
 		case string:
-			// Ensure values are mapped as case-insenstive.
+			// Ensure values are mapped as case-insensitive.
 			valueMap[strings.ToUpper(value)] = true
 			break
 		case float32, float64, int, int8, int16, int32, int64:
@@ -46,7 +46,7 @@ func (a *contains) Filter(row map[string]interface{}, filter *Filter) error {
 	// Do we have a match?
 	switch value := row[filter.Field].(type) {
 	case string:
-		// Ensure values are checked as case-insenstive.
+		// Ensure values are checked as case-insensitive.
 		if valueMap[strings.ToUpper(value)] {
 			a.rows = append(a.rows, row)
 		}

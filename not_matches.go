@@ -22,7 +22,7 @@ func (a *notMatches) Filter(row map[string]interface{}, filter *Filter) error {
 		return fmt.Errorf("Invalid datatype. Expected string datatype for `%v`, got %T", filter.Field, row[filter.Field])
 	}
 
-	// Ensure values are matched case-insenstive.
+	// Ensure values are matched case-insensitive.
 	s, substr := strings.ToUpper(row[filter.Field].(string)), strings.ToUpper(filter.Value.(string))
 
 	// Match.
