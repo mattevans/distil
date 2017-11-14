@@ -3,6 +3,7 @@
 [![GoDoc](https://godoc.org/github.com/mattevans/distil?status.svg)](https://godoc.org/github.com/mattevans/distil)
 [![Build Status](https://travis-ci.org/mattevans/distil.svg?branch=master)](https://travis-ci.org/mattevans/distil)
 [![Go Report Card](https://goreportcard.com/badge/github.com/mattevans/distil)](https://goreportcard.com/report/github.com/mattevans/distil)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/mattevans/distil/blob/master/LICENSE)
 
 In memory dataset filtering.
 
