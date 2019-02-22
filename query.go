@@ -27,6 +27,8 @@ func (f *Filter) distiller() (distiller, error) {
 		return &eq{}, nil
 	case "not_eq":
 		return &notEq{}, nil
+	case "starts_with":
+		return &startsWith{}, nil
 	case "matches":
 		return &matches{}, nil
 	case "does_not_match":
