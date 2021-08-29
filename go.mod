@@ -1,6 +1,6 @@
 module github.com/mattevans/distil
 
-go 1.15
+go 1.16
 
 require (
 	github.com/onsi/gomega v1.10.2
